@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function loads()
+{	
+	alert("load");
+var xml=new XMLHttpRequest();
+xml.onreadystatechange=function()
+{
+
+	if(xml.readyState==4 && xml.status==200)
+		{
+			document.getElementById("aa").innerHTML=xml.responseText;
+		}
+	else
+		{
+			document.getElementById("aa").innerHTML="<img src='ajax-loader.gif' height='20' width='20'>";
+		}
+}
+xml.open("GET","2.jsp",true);
+xml.send();
+}	
+
+
+function loads1()
+{
+	alert("load1");
+var xml=new XMLHttpRequest();
+xml.onreadystatechange=function()
+{
+	if(xml.readyState==4 && xml.status==200)
+		{
+			document.getElementById("aa1").innerHTML=xml.responseText;
+		}
+	else
+	{
+		document.getElementById("aa1").innerHTML="<img src='ajax-loader.gif' height='20' width='20'>";
+	}
+}
+xml.open("GET","3.jsp",true);
+xml.send();
+}	
+
+</script>
+</head>
+<body>
+<form>
+SELECT DOB    <select onchange="loads()">
+<option>Select</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+</select>
+<label id="aa"></label>
+<label id="aa1"></label>
+</form>
+</body>
+</html>
