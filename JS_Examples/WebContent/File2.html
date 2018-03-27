@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+function func()
+{
+	var a=document.form1.t1.value;
+	var b=document.form1.t2.value;
+	var c=document.form1.t3.value;
+
+	if(a=="" || a==null)
+		{
+		alert("Please fill the name");
+		return false;
+		}
+	if(b=="" || b==null)
+	{
+	alert("Please fill the password");
+	return false;
+	}
+	if(c=="" || c==null)
+	{
+	alert("Please fill the email");
+	return false;
+	}
+	return true;
+}
+function chk(form)
+{
+	if ( ( form.r1[0].checked == false ) && ( form.r1[1].checked == false ) ) 
+	{
+	alert ( "Please choose your Gender" ); 
+	return false;
+	}
+}
+function Allfunc(form)
+{
+var retvalue;
+retvalue = func();
+if(retvalue == false) { return retvalue; }
+retvalue = chk(form);
+if(retvalue == false) { return retvalue; }
+}
+</script>
+<form name="form1" method=post>
+<b>Name</b>
+&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="text" name="t1">
+<br>
+<br>
+<b>Password</b>
+&nbsp<input type="password" name="t2">
+<br>
+<br>
+<b>Email</b>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="email" name="t3">
+<br>
+<br>
+<b>Gender</b>
+&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="r1" value="Male">MALE
+&nbsp
+<input type="radio" name="r1" value="Female">FEMALE
+<br>
+<br>
+<b>Country</b>
+&nbsp&nbsp&nbsp&nbsp&nbsp
+<select name="c1">
+<option>India</option>
+<option>USA</option>
+<option>Nepal</option>
+<option>China</option>
+</select>
+<br>
+<br>
+<input type="submit" name="Submit" value="Register" onclick="return Allfunc(form)">
+
+</form>
+</body>
+</html>

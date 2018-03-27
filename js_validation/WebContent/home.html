@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function al()
+{
+	alert("this is an alert box");
+}
+function pro()
+{
+	var b=prompt("Enter ID");
+	if(b)
+		{
+		 document.getElementById("p2").innerHTML=b;
+		}
+	else
+		{
+		document.getElementById("p2").innerHTML="No ID entered";
+		}
+}
+function con()
+{
+	var a=confirm("Want to continue?");
+	if(a)
+		{
+		 document.getElementById("p1").innerHTML="Yes,want to continue.....";
+		}
+	else
+		{
+		document.getElementById("p1").innerHTML="No";
+		}
+}
+</script>
+<form>
+<p id="p1"></p>
+<h2 id="p2"></h2>
+<input type="button" value="alert" onclick="al()" style="float:left">
+<input type="button" value="confirm" onclick="con()" style="float:left">
+<input type="button" value="prompt" onclick="pro()" style="float:left">
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function cnfrm()
+{
+	var a=document.form2.p1.value;
+	var b=document.form2.p2.value;
+	if(a!=b)
+		{
+		alert("Password does not match");
+		}
+}
+</script>
+<form name="form2" method="post">
+<b>Password</b>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="password" name="p1">
+<br>
+<br>
+<b>Confirm Password</b>
+&nbsp
+<input type="password" name="p2">
+<br>
+<br>
+<b>Age</b>(in years)
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="text" name="t1">
+<br>
+<br>
+<input type="submit" value="Submit" onclick="return cnfrm()">
+</form>
+</body>
+</html>
