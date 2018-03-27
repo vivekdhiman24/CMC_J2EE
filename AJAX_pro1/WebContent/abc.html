@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function loads()
+{
+	var xmlhttp;
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function()
+	{
+		if(xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+			document.getElementById("mydiv").innerHTML=xmlhttp.responseText;
+			}
+		else
+			{
+			document.getElementById("mydiv").innerHTML="<img src='ajax-loader.gif' height='20' width='20'/>";
+			}
+	};
+	xmlhttp.open("GET","aaa.jsp",true);
+	xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="mydiv">
+<h2>ajax example</h2>
+</div>
+<button type="button" onclick="loads()">Changes content</button>
+
+</body>
+</html>
