@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function loads(s)
+{
+	
+	alert(s);
+	
+	var xmlhttp=new XMLHttpRequest();
+	
+	xmlhttp.onreadystatechange=function()
+	{
+		
+		if(xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+			
+			document.getElementById("aa").innerHTML=xmlhttp.responseText;
+			}
+		else
+			{
+		
+			document.getElementById("aa").innerHTML="<img src='ajax-loader.gif' height='20' width='20'>";
+			}
+	}
+	xmlhttp.open("GET", "submit.jsp?r="+s, true);
+	xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<form>
+Name<input type="text" name="t1" onblur="loads(this.value)">
+<label style="color:red" id="aa"></label>
+<br>
+Password<input type="password" name="t2">
+<br>
+Phone No.<input type="number" name="t3">
+<br>
+<input type="submit">
+</form>
+</body>
+</html>
