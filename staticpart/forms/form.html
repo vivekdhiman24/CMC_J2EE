@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>
+form validation
+</title>
+<script type="text/javascript">
+function fun(thisform)
+{
+var name=thisform.t1.value;
+var pwd=thisform.t2.value;
+var number=thisform.t3.value;
+if(name==""||name==null)
+{
+alert("Name is required");
+return false;
+}
+if(pwd==""||pwd==null)
+{
+alert("Password is required");
+return false;
+}
+if(pwd.length<8||pwd.length>15)
+{
+alert("Password length between 8 to 15");
+return false;
+}
+if(number==""||number==null)
+{
+alert("Number is required");
+return false;
+}
+if(isNaN(number))
+{
+alert("Contact no in number format");
+return false;
+}
+return true;
+}
+</script>
+</head>
+<body>
+<form onsubmit="return fun(this)">
+<label>Name:</label><input type="text" name="t1"/>
+<br/>
+<label>Password:</label><input type="password" name="t2"/>
+<br/>
+<label>Contact No:</label><input type="text" name="t3"/>
+<br/>
+<input type="submit" value="submit"/>
+</form>
+</body>
+</html>

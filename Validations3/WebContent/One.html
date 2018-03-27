@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function ab()
+{
+	var a=document.myform.t1.value;
+	if(a=="" || a==null)
+		{
+		alert("Please fill the value");
+		return false;
+		}
+}
+</script>
+<form action="NewFile.html" name="myform">
+<input type="text" name="t1">
+<br>
+<input type="submit" value="add" onclick="return ab();">
+</form>
+</body>
+</html>
