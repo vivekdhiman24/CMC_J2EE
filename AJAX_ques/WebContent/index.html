@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function loads(s)
+{
+	
+var xml=new XMLHttpRequest();
+xml.onreadystatechange=function()
+{
+	
+if(xml.readyState==4 && xml.status==200)
+	{
+	
+	document.getElementById("a").innerHTML=xml.responseText;
+	
+	}
+	
+else
+	{
+	
+	document.getElementById("a").innerHTML="<img src='ajax-loader.gif' height='100' width='100'>";
+	
+	}
+	
+}	
+xml.open("GET","console.jsp?s1="+s,true);
+xml.send();
+}
+</script>
+</head>
+<body>
+<form>
+<select onchange=loads(this.value) name="s1">
+<option>Select</option>
+<option>abc</option>
+<option>agdh</option>
+<option>hjbgjh</option>
+<option>utu</option>
+<option>def</option>
+</select>
+<div id="a"></div>
+</form>
+</body>
+</html>
